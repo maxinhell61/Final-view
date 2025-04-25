@@ -1,0 +1,18 @@
+# React (project/)
+project/node_modules/
+project/build/
+
+# Flask (finale/)
+finale/__pycache__/
+finale/instance/
+finale/.env
+finale/*.pyc
+
+# General
+.env
+.DS_Store
+*.log
+
+
+
+#nope
