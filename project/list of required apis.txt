@@ -1,0 +1,144 @@
+Admin Dashboard Features
+The admin dashboard allows store managers to manage products, users, orders, payments, and analytics.
+1️⃣ User Management
+✅ View, edit, and delete users
+✅ Assign user roles (admin, delivery agent, customer)
+✅ Ban/unban users
+APIs
+GET /admin/users – Fetch all users
+GET /admin/users/{id} – Fetch user details
+PUT /admin/users/{id} – Update user details
+DELETE /admin/users/{id} – Delete a user
+PUT /admin/users/ban/{id} – Ban a user
+2️⃣ Product & Category Management
+✅ Add, update, and delete products
+✅ Manage categories and subcategories
+✅ Bulk import/export product data
+APIs
+GET /admin/products – Get all products
+POST /admin/products – Add a new product
+PUT /admin/products/{id} – Update product details
+DELETE /admin/products/{id} – Remove a product
+GET /admin/categories – Get all categories
+POST /admin/categories – Create a category
+3️⃣ Order Management
+✅ View & update order status
+✅ Assign delivery agents
+✅ Track live orders
+APIs
+GET /admin/orders – Get all orders
+GET /admin/orders/{id} – Get order details
+PUT /admin/orders/{id} – Update order status
+POST /admin/orders/assign-rider/{order_id} – Assign a delivery partner
+4️⃣ Delivery & Logistics
+✅ Assign delivery personnel
+✅ View delivery status
+APIs
+GET /admin/delivery-agents – Get available delivery agents
+POST /admin/delivery-agents/assign – Assign an order to an agent
+5️⃣ Payments & Refunds
+✅ View payment transactions
+✅ Approve/disapprove refunds
+APIs
+GET /admin/payments – Get all payment transactions
+POST /admin/refund/{order_id} – Initiate a refund
+6️⃣ Offers & Coupons
+✅ Create and manage discount offers
+✅ Apply promo codes
+APIs
+POST /admin/coupons – Create a new coupon
+PUT /admin/coupons/{id} – Edit a coupon
+DELETE /admin/coupons/{id} – Delete a coupon
+7️⃣ Analytics & Reports
+✅ View sales reports
+✅ Track best-selling products
+✅ Monitor user growth
+APIs
+GET /admin/analytics/sales – Sales data
+GET /admin/analytics/users – User growth
+🎯 Admin Dashboard Workflow
+1️⃣ Login as Admin → Secure authentication
+2️⃣ Manage Products → Add/update/delete
+3️⃣ Handle Orders → Approve/cancel orders, assign delivery agents
+4️⃣ Monitor Payments → Track transactions, approve refunds
+5️⃣ Manage Users → Ban/unban customers
+6️⃣ Create Offers → Add discounts & promo codes
+7️⃣ View Reports → Sales, users, orders
+
+
+
+
+
+
+
+
+
+1. Authentication & User Management
+POST /auth/signup – Register a new user.
+POST /auth/login – Authenticate and generate JWT token.
+POST /auth/logout – Logout the user.
+POST /auth/refresh-token – Refresh JWT token.
+GET /user/profile – Fetch user profile.
+PUT /user/profile – Update user profile.
+POST /user/verify-otp – Verify phone/email OTP.
+POST /user/change-password – Change user password.
+2. Product & Category Management
+GET /categories – Fetch all product categories.
+GET /products – Fetch all products with filtering and search.
+GET /products/{id} – Get product details.
+POST /products – Add a new product (Admin).
+PUT /products/{id} – Update product details (Admin).
+DELETE /products/{id} – Remove a product (Admin).
+3. Cart & Wishlist
+POST /cart/add – Add item to cart.
+GET /cart – Fetch user’s cart.
+PUT /cart/update – Update item quantity.
+DELETE /cart/remove/{id} – Remove item from cart.
+POST /wishlist/add – Add item to wishlist.
+GET /wishlist – Fetch user’s wishlist.
+DELETE /wishlist/remove/{id} – Remove item from wishlist.
+4. Address Management
+POST /address/add – Add a new address.
+GET /address – Fetch saved addresses.
+PUT /address/update/{id} – Update an address.
+DELETE /address/delete/{id} – Remove an address.
+5. Checkout & Payment
+POST /checkout – Start checkout process.
+POST /payment/initiate – Initiate payment with Razorpay.
+POST /payment/verify – Verify payment status.
+GET /orders/{id} – Fetch order details.
+6. Order Management
+GET /orders – Fetch user’s orders.
+POST /orders/place – Place an order.
+POST /orders/cancel/{id} – Cancel an order.
+POST /orders/track/{id} – Track order status.
+GET /orders/history – Fetch order history.
+7. Delivery & Rider Management
+GET /rider/assign/{order_id} – Assign a rider for delivery (Admin).
+POST /rider/update-status – Update delivery status.
+GET /rider/location/{order_id} – Get live location of rider.
+8. Offers & Coupons
+GET /offers – Fetch available offers.
+POST /coupons/apply – Apply a coupon.
+GET /coupons – Get user’s available coupons.
+9. Notification & Support
+GET /notifications – Fetch notifications.
+POST /support/chat – Start a chat with support.
+GET /support/history – Get previous support chats.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
